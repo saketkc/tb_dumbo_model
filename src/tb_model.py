@@ -249,8 +249,12 @@ class TBModel:
         print(f"Simulation completed for {years} years")
         return results
 
-    def plot_results(self, save_path='../results/tb_model_output.png'):
-        """Create visualization of model results."""
+    def plot_results(self, save_path='./results/tb_model_output.png'):
+        """Create visualization of model results.
+        save_path: str
+            Path to save the output plot image.
+        
+        """
         if self.results is None:
             print("No results to plot. Run simulation first.")
             return
