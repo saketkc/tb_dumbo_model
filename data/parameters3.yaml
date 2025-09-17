@@ -1,0 +1,18 @@
+
+model_parameters:
+  # Transmission dynamics
+  beta: 0.35              # Transmission rate per contact per day
+  sigma: 0.0002           # Progression rate from latent to active TB (1/day)
+  gamma: 0.005            # Natural recovery rate from active TB (1/day)
+  mu: 0.00004             # Natural death rate (1/day)
+
+  # Intervention parameters
+  treatment_rate: 0.01    # Treatment initiation rate (1/day)
+  vaccine_efficacy: 0.7   # Vaccine effectiveness (proportion)
+
+  # Contact and mixing parameters
+  contact_rate: 10        # Average contacts per person per day
+
+  # Disease progression probabilities
+  prob_fast_progression: 0.05  # Probability of fast progression to active TB
+  prob_reactivation: 0.001     # Annual reactivation rate for latent TB
