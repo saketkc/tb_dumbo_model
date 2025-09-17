@@ -250,7 +250,9 @@ class TBModel:
         return results
 
     def plot_results(self, save_path='./results/tb_model_output.png'):
-        """Create visualization of model results."""
+        """Create visualization of model results.
+        save.path"""
+
         if self.results is None:
             print("No results to plot. Run simulation first.")
             return
