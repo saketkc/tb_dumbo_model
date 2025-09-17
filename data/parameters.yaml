@@ -11,7 +11,7 @@ model_parameters:
   mu: 0.00004             # Natural death rate (1/day)
 
   # Intervention parameters
-  treatment_rate: 0.01    # Treatment initiation rate (1/day)
+  treatment_rate: 0.02    # Treatment initiation rate (1/day)
   vaccine_efficacy: 0.7   # Vaccine effectiveness (proportion)
 
   # Contact and mixing parameters
