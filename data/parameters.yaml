@@ -1,0 +1,90 @@
+# TB Model Configuration File
+# ============================
+# This file contains all the parameters for the TB transmission model
+# Modify these values to explore different scenarios
+
+model_parameters:
+  # Transmission dynamics
+  beta: 0.05              # Transmission rate per contact per day
+  sigma: 0.0002           # Progression rate from latent to active TB (1/day)
+  gamma: 0.005            # Natural recovery rate from active TB (1/day)
+  mu: 0.00004             # Natural death rate (1/day)
+
+  # Intervention parameters
+  treatment_rate: 0.01    # Treatment initiation rate (1/day)
+  vaccine_efficacy: 0.7   # Vaccine effectiveness (proportion)
+
+  # Contact and mixing parameters
+  contact_rate: 10        # Average contacts per person per day
+
+  # Disease progression probabilities
+  prob_fast_progression: 0.05  # Probability of fast progression to active TB
+  prob_reactivation: 0.001     # Annual reactivation rate for latent TB
+
+# Age group definitions
+age_groups:
+  - "0-14"    # Children
+  - "15-44"   # Young adults
+  - "45-64"   # Middle-aged adults
+  - "65+"     # Elderly
+
+# Time parameters
+time_parameters:
+  start_year: 2020
+  end_year: 2030
+  time_step: 1            # Integration step size in days
+
+# Population structure (in thousands)
+initial_population:
+  "0-14":
+    total: 500
+    susceptible: 497.9
+    latent: 2.0
+    infectious: 0.1
+    recovered: 0.0
+
+  "15-44":
+    total: 800
+    susceptible: 794.8
+    latent: 5.0
+    infectious: 0.2
+    recovered: 0.0
+
+  "45-64":
+    total: 400
+    susceptible: 396.85
+    latent: 3.0
+    infectious: 0.15
+    recovered: 0.0
+
+  "65+":
+    total: 200
+    susceptible: 198.95
+    latent: 1.0
+    infectious: 0.05
+    recovered: 0.0
+
+# Intervention scenarios (can be modified for different exercises)
+interventions:
+  vaccination:
+    enabled: false
+    coverage_by_age:
+      "0-14": 0.8     # 80% coverage in children
+      "15-44": 0.3    # 30% coverage in young adults
+      "45-64": 0.1    # 10% coverage in middle-aged
+      "65+": 0.4      # 40% coverage in elderly
+
+  enhanced_treatment:
+    enabled: false
+    treatment_multiplier: 2.0  # Double the treatment rate
+
+  contact_reduction:
+    enabled: false
+    reduction_factor: 0.7  # 30% reduction in contacts
+
+# Output settings
+output:
+  save_csv: true
+  save_plots: true
+  plot_format: "png"
+  results_directory: "../results/"
