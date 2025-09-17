@@ -249,7 +249,7 @@ class TBModel:
         print(f"Simulation completed for {years} years")
         return results
 
-    def plot_results(self, save_path='../results/tb_model_output.png'):
+    def plot_results(self, save_path='./results/tb_model_output.png'):
         """Create visualization of model results."""
         if self.results is None:
             print("No results to plot. Run simulation first.")
@@ -309,7 +309,7 @@ class TBModel:
         print(f"Plot saved to {save_path}")
         plt.show()
 
-    def save_results(self, filename='../results/tb_model_results.csv'):
+    def save_results(self, filename='./results/tb_model_results.csv'):
         """Save simulation results to CSV file."""
         if self.results is None:
             print("No results to save. Run simulation first.")
