@@ -6,9 +6,9 @@
 model_parameters:
   # Transmission dynamics
   beta: 0.05              # Transmission rate per contact per day
-  sigma: 0.0002           # Progression rate from latent to active TB (1/day)
+  sigma: 0.002           # Progression rate from latent to active TB (1/day)
   gamma: 0.005            # Natural recovery rate from active TB (1/day)
-  mu: 0.00004             # Natural death rate (1/day)
+  mu: 0.0004             # Natural death rate (1/day)
 
   # Intervention parameters
   treatment_rate: 0.015    # Treatment initiation rate (1/day)
